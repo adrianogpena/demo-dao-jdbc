@@ -100,7 +100,6 @@ public class SellerDaoJDBC implements SellerDao {
 			st.setInt(6, obj.getId());
 
 			st.executeUpdate();
-
 		}
 		catch (SQLException e) {
 			throw new DbException(e.getMessage());
@@ -108,7 +107,6 @@ public class SellerDaoJDBC implements SellerDao {
 		finally {
 			DB.closeStatement(st);
 		}
-
 	}
 
 	@Override
@@ -155,9 +153,8 @@ public class SellerDaoJDBC implements SellerDao {
 				Seller obj = instantiateSeller(rs, dep);
 				return obj;
 			}
-			else {
-				return null;
-			}
+
+			return null;
 		}
 		catch (SQLException e) {
 			throw new DbException(e.getMessage());
